@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SettingsIndexRouteImport } from './routes/settings/index'
+import { Route as OrdersIndexRouteImport } from './routes/orders/index'
+import { Route as NotificationsIndexRouteImport } from './routes/notifications/index'
+import { Route as DiscountsIndexRouteImport } from './routes/discounts/index'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as CustomersIndexRouteImport } from './routes/customers/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SettingsIndexRoute = SettingsIndexRouteImport.update({
+  id: '/settings/',
+  path: '/settings/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersIndexRoute = OrdersIndexRouteImport.update({
+  id: '/orders/',
+  path: '/orders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsIndexRoute = NotificationsIndexRouteImport.update({
+  id: '/notifications/',
+  path: '/notifications/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscountsIndexRoute = DiscountsIndexRouteImport.update({
+  id: '/discounts/',
+  path: '/discounts/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomersIndexRoute = CustomersIndexRouteImport.update({
+  id: '/customers/',
+  path: '/customers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/customers': typeof CustomersIndexRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/discounts': typeof DiscountsIndexRoute
+  '/notifications': typeof NotificationsIndexRoute
+  '/orders': typeof OrdersIndexRoute
+  '/settings': typeof SettingsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/customers': typeof CustomersIndexRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/discounts': typeof DiscountsIndexRoute
+  '/notifications': typeof NotificationsIndexRoute
+  '/orders': typeof OrdersIndexRoute
+  '/settings': typeof SettingsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/customers/': typeof CustomersIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/discounts/': typeof DiscountsIndexRoute
+  '/notifications/': typeof NotificationsIndexRoute
+  '/orders/': typeof OrdersIndexRoute
+  '/settings/': typeof SettingsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/customers'
+    | '/dashboard'
+    | '/discounts'
+    | '/notifications'
+    | '/orders'
+    | '/settings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/customers'
+    | '/dashboard'
+    | '/discounts'
+    | '/notifications'
+    | '/orders'
+    | '/settings'
+  id:
+    | '__root__'
+    | '/'
+    | '/customers/'
+    | '/dashboard/'
+    | '/discounts/'
+    | '/notifications/'
+    | '/orders/'
+    | '/settings/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CustomersIndexRoute: typeof CustomersIndexRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+  DiscountsIndexRoute: typeof DiscountsIndexRoute
+  NotificationsIndexRoute: typeof NotificationsIndexRoute
+  OrdersIndexRoute: typeof OrdersIndexRoute
+  SettingsIndexRoute: typeof SettingsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings/': {
+      id: '/settings/'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders/': {
+      id: '/orders/'
+      path: '/orders'
+      fullPath: '/orders'
+      preLoaderRoute: typeof OrdersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications/': {
+      id: '/notifications/'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discounts/': {
+      id: '/discounts/'
+      path: '/discounts'
+      fullPath: '/discounts'
+      preLoaderRoute: typeof DiscountsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customers/': {
+      id: '/customers/'
+      path: '/customers'
+      fullPath: '/customers'
+      preLoaderRoute: typeof CustomersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CustomersIndexRoute: CustomersIndexRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+  DiscountsIndexRoute: DiscountsIndexRoute,
+  NotificationsIndexRoute: NotificationsIndexRoute,
+  OrdersIndexRoute: OrdersIndexRoute,
+  SettingsIndexRoute: SettingsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

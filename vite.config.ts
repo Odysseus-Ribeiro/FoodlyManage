@@ -45,6 +45,7 @@ export default defineConfig({
       '@constants': path.resolve(__dirname, './src/constants'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@errors': path.resolve(__dirname, './src/errors'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
     },
   },
 })

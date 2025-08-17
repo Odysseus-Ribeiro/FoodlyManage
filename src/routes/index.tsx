@@ -1,7 +1,14 @@
+import { ModeToggle } from '@/components';
+import { MainLayout } from '@/layouts';
 import { createFileRoute } from '@tanstack/react-router';
 
 const HomePage = () => {
-  return <div className='bg-red-500'>Page d'accueil</div>;
+  return (
+    <MainLayout>
+      Page d'accueil
+      <ModeToggle />
+    </MainLayout>
+  );
 };
 
 export const Route = createFileRoute('/')({
