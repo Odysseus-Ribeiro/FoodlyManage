@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite preview --host 0.0.0.0 --port 3000",
+    "start": "serve -s dist -l 3000 -L",
     "generate-routes": "tsr generate",
     "watch-routes": "tsr watch",
     "build-routes": "npm run generate-routes && tsc -b && vite build"
