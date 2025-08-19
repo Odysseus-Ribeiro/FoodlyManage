@@ -46,6 +46,7 @@ export default defineConfig({
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@errors': path.resolve(__dirname, './src/errors'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@types': path.resolve(__dirname, './src/types'),
     },
   },
 })

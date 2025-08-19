@@ -6,7 +6,6 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       <Navbar />
 
       <main className='flex-1'>
-        {/* <SidebarTrigger /> */}
         {children}
       </main>
     </SidebarProvider>

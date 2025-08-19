@@ -1,17 +1,13 @@
-import { ModeToggle } from '@/components';
-import { TypographyExample } from '@/components/examples/typography';
+import { Header, Input, Typography } from '@/components';
 import { MainLayout } from '@/layouts';
 import { createFileRoute } from '@tanstack/react-router';
 
 const HomePage = () => {
   return (
     <MainLayout>
-      Page d'accueil
-      <ModeToggle />
-      <br />
-      <hr/>
-      <br />
-      <TypographyExample />
+      <Header Filter={Filter}>
+        <Typography variant='h1'>FoodlyManage</Typography>
+      </Header>
     </MainLayout>
   );
 };
@@ -19,3 +15,11 @@ const HomePage = () => {
 export const Route = createFileRoute('/')({
   component: HomePage,
 });
+
+const Filter = () => {
+  return (
+    <div>
+      <Input placeholder='Rechercher'  />
+    </div>
+  );
+};
