@@ -7,4 +7,4 @@ export * from './sidebar';
 export * from './skeleton';
 export * from './theme-toggle';
 export * from './tooltip';
-
+export * from './typography';
