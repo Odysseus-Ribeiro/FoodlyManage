@@ -4,13 +4,13 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 const inputVariants = cva(
-  'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors',
+  'flex h-10 w-full rounded-md border border-border bg-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors',
   {
     variants: {
       size: {
         sm: 'h-8 px-2 text-xs',
         md: 'h-10 px-3 text-sm',
-        lg: 'h-12 px-4 text-base',
+        lg: 'h-12 px-4 text-lg',
       },
       state: {
         default: '',
@@ -28,6 +28,9 @@ const inputVariants = cva(
       },
       hasRightContent: {
         true: 'pr-10',
+      },
+      hasDropShadow: {
+        true: 'shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]',
       },
     },
     defaultVariants: {
@@ -55,7 +58,27 @@ export interface InputCustomProps extends Omit<React.InputHTMLAttributes<HTMLInp
 
 export const InputCustom = React.forwardRef<HTMLInputElement, InputCustomProps>(
   (
-    { leftIcon, rightIcon, onLeftIconClick, onRightIconClick, containerClassName, clearable, onClear, className, value, state, helperText, label, id, size, variant, loading, disabled, ...props },
+    {
+      leftIcon,
+      rightIcon,
+      onLeftIconClick,
+      onRightIconClick,
+      containerClassName,
+      clearable,
+      onClear,
+      className,
+      value,
+      state,
+      helperText,
+      label,
+      id,
+      size,
+      variant,
+      hasDropShadow,
+      loading,
+      disabled,
+      ...props
+    },
     ref
   ) => {
     const generatedId = React.useId();
@@ -119,6 +142,7 @@ export const InputCustom = React.forwardRef<HTMLInputElement, InputCustomProps>(
                 variant,
                 hasLeftIcon: !!leftIcon,
                 hasRightContent: !!hasRightContent,
+                hasDropShadow,
               }),
               className
             )}

@@ -1,10 +1,12 @@
-import { Header, Input, Typography } from '@/components';
+import { Header, InputCustom, Typography } from '@/components';
 import { MainLayout } from '@/layouts';
 import { createFileRoute } from '@tanstack/react-router';
+import { Search } from 'lucide-react';
+import { useState } from 'react';
 
 const HomePage = () => {
   return (
-    <MainLayout>
+    <MainLayout leftSidebar='cart'>
       <Header Filter={Filter}>
         <Typography variant='h1'>FoodlyManage</Typography>
       </Header>
@@ -17,9 +19,20 @@ export const Route = createFileRoute('/')({
 });
 
 const Filter = () => {
+  const [search, setSearch] = useState('');
   return (
     <div>
-      <Input placeholder='Rechercher'  />
+      <InputCustom
+        placeholder='Rechercher'
+        size='lg'
+        className='w-55'
+        leftIcon={<Search className='size-5' />}
+        clearable
+        hasDropShadow
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        onClear={() => setSearch('')}
+      />
     </div>
   );
 };
