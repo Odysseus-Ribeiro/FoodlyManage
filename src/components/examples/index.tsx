@@ -7,17 +7,17 @@ const ExamplesTabs = [
   {
     label: 'Typography',
     value: 'typography',
-    content: <TypographyExample />,
+    content: TypographyExample,
   },
   {
     label: 'InputCustom',
     value: 'input-custom',
-    content: <InputCustomExample />,
+    content: InputCustomExample,
   },
   {
     label: 'Tabs',
     value: 'tabs',
-    content: <TabsExample />,
+    content: TabsExample,
   },
 ];
 

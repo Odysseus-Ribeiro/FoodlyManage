@@ -1,5 +1,6 @@
 import { Header, InputCustom, Typography } from '@/components';
 import { MainLayout } from '@/layouts';
+import { Home } from '@/pages';
 import { createFileRoute } from '@tanstack/react-router';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
@@ -10,6 +11,8 @@ const HomePage = () => {
       <Header Filter={Filter}>
         <Typography variant='h1'>FoodlyManage</Typography>
       </Header>
+
+      <Home />
     </MainLayout>
   );
 };

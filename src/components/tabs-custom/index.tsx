@@ -6,7 +6,7 @@ import React, { useEffect, useId, useRef, useState } from 'react';
 export interface TabItem {
   value: string;
   label: string;
-  content: React.ReactNode;
+  content: React.FC;
 }
 
 export interface TabsCustomProps {
@@ -40,7 +40,7 @@ export function TabsCustom({ tabs, defaultValue, className, tabsListClassName, t
             key={tab.value}
             value={tab.value}
             className={cn(
-              'relative rounded-none py-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary data-[state=active]:font-medium',
+              'relative rounded-none px-0 cursor-pointer data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-primary data-[state=active]:font-medium',
               tabsTriggerClassName
             )}>
             {tab.label}
@@ -69,7 +69,7 @@ export function TabsCustom({ tabs, defaultValue, className, tabsListClassName, t
 
       {tabs.map((tab) => (
         <TabsContent key={tab.value} value={tab.value} className={tabsContentClassName}>
-          {tab.content}
+          <tab.content />
         </TabsContent>
       ))}
     </Tabs>
