@@ -40,7 +40,7 @@ export function TabsExample() {
     {
       value: 'home',
       label: 'Accueil',
-      content: (
+      content: () => (
         <div className='p-4'>
           <Typography variant='h4' className='mb-2'>
             🏠 Page d'accueil
@@ -54,7 +54,7 @@ export function TabsExample() {
     {
       value: 'analytics',
       label: 'Analytiques',
-      content: (
+      content: () => (
         <div className='p-4'>
           <Typography variant='h4' className='mb-3'>
             📊 Analytiques
@@ -83,7 +83,7 @@ export function TabsExample() {
     {
       value: 'settings',
       label: 'Paramètres',
-      content: (
+      content: () => (
         <div className='p-4'>
           <Typography variant='h4' className='mb-3'>
             ⚙️ Paramètres
@@ -107,7 +107,7 @@ export function TabsExample() {
     {
       value: 'overview',
       label: "Vue d'ensemble",
-      content: (
+      content: () => (
         <div className='p-6 space-y-4'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
             <div className='bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 rounded-lg border'>
@@ -150,7 +150,7 @@ export function TabsExample() {
     {
       value: 'sales',
       label: 'Ventes',
-      content: (
+      content: () => (
         <div className='p-6'>
           <Typography variant='h4' className='mb-4'>
             Rapport des ventes
@@ -181,7 +181,7 @@ export function TabsExample() {
     {
       value: 'customers',
       label: 'Clients',
-      content: (
+      content: () => (
         <div className='p-6'>
           <Typography variant='h4' className='mb-4'>
             Gestion des clients
@@ -215,7 +215,7 @@ export function TabsExample() {
     {
       value: 'products',
       label: 'Produits',
-      content: (
+      content: () => (
         <div className='p-6'>
           <div className='flex items-center gap-2 mb-4'>
             <Package className='h-5 w-5' />
@@ -251,7 +251,7 @@ export function TabsExample() {
     {
       value: 'orders',
       label: 'Commandes',
-      content: (
+      content: () => (
         <div className='p-6'>
           <div className='flex items-center gap-2 mb-4'>
             <ShoppingCart className='h-5 w-5' />
@@ -297,7 +297,7 @@ export function TabsExample() {
     {
       value: 'reports',
       label: 'Rapports',
-      content: (
+      content: () => (
         <div className='p-6'>
           <div className='flex items-center gap-2 mb-4'>
             <FileText className='h-5 w-5' />

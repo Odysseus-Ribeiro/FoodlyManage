@@ -5,3 +5,4 @@ export * from './navbar';
 export * from './theme';
 export * from './ui';
 export * from "./tabs-custom"
+export * from "./food-card"
