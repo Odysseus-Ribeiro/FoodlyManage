@@ -1,4 +1,5 @@
 import { TabsCustom } from '@/components';
+import { CardExample } from './card';
 import { InputCustomExample } from './input-custom';
 import { TabsExample } from './tabs';
 import { TypographyExample } from './typography';
@@ -18,6 +19,11 @@ const ExamplesTabs = [
     label: 'Tabs',
     value: 'tabs',
     content: TabsExample,
+  },
+  {
+    label: 'Card',
+    value: 'card',
+    content: CardExample,
   },
 ];
 

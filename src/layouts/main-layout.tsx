@@ -11,10 +11,10 @@ type MainLayoutProps = {
 
 export function MainLayout({ children, leftSidebar }: MainLayoutProps) {
   return (
-    <SidebarProvider className='h-screen ' style={{ '--sidebar-width': '6.5rem' } as React.CSSProperties}>
+    <SidebarProvider className='h-full' style={{ '--sidebar-width': '6.5rem' } as React.CSSProperties}>
       <Navbar />
 
-      <main className='flex-1'>{children}</main>
+      <main className='flex-1 flex flex-col'>{children}</main>
 
       {leftSidebar && RenderLeftSidebarComponent(leftSidebar)}
     </SidebarProvider>

@@ -1,36 +1,36 @@
 import { type TabItem } from '@/components';
-import { TEST_1, TEST_2, TEST_3, TEST_4, TEST_5, TEST_6 } from './test';
+import { HomeContents } from '@/pages/home/contents';
 
 export const HOME_TABS: TabItem[] = [
   {
     value: 'hot-dishes',
     label: 'Plats chaud',
-    content: TEST_1
+    content: HomeContents
   },
   {
     value: 'cold-dishes',
     label: 'Plat froid',
-    content: TEST_2
+    content: HomeContents,
   },
   {
     value: 'soups',
     label: 'Soupes',
-    content: TEST_3
+    content: HomeContents
   },
   {
-    value: 'grill',
+    value: 'grills',
     label: 'Grillades',
-    content: TEST_4,
+    content: HomeContents,
   },
   {
-    value: 'appetizer',
+    value: 'appetizers',
     label: 'Apéritifs',
-    content: TEST_5
+    content: HomeContents,
   },
   {
     value: 'desserts',
     label: 'Desserts',
-    content: TEST_6,
+    content: HomeContents,
   },
 ];
 
